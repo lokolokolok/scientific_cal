@@ -40,9 +40,9 @@
 
 /* Display Section */
 .display {
-  padding: 30px;
+  padding: 20px;
   text-align: right;
-  font-size: 1.2em;
+  font-size: 1.5em;
   border-bottom: 3px solid #d4af37;
   background-color: #3e3e3e;
   color: #d4af37;
@@ -60,13 +60,13 @@
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 button {
   flex: 1;
   padding: 20px;
-  font-size: 1em;
+  font-size: 1.2em;
   border: 1px solid #444;
   background: #222;
   color: white;
@@ -148,7 +148,7 @@ button:hover {
 
   button {
     padding: 12px;
-    font-size: 0.9em;
+    font-size: 1em;
     flex: 1 1 22%; /* Ensures buttons scale properly */
   }
 }
