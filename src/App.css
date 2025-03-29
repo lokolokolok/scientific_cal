@@ -7,6 +7,7 @@
   background: #121212;
   flex-wrap: wrap;
   padding: 20px;
+  flex-direction: row; /* Default: Side-by-side on large screens */
 }
 
 /* Sidebar (History Section) */
@@ -27,7 +28,6 @@
 .calculator {
   width: 858px;
   max-width: 100%;
-  height: auto;
   border: 3px solid #d4af37;
   border-radius: 12px;
   overflow: hidden;
@@ -40,14 +40,15 @@
 
 /* Display Section */
 .display {
-  padding: 30px;
+  padding: 20px;
   text-align: right;
-  font-size: 1.2em;
+  font-size: 1.5em;
   border-bottom: 3px solid #d4af37;
   background-color: #3e3e3e;
   color: #d4af37;
   font-weight: bold;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 /* Buttons */
@@ -66,7 +67,7 @@
 button {
   flex: 1;
   padding: 20px;
-  font-size: 1em;
+  font-size: 1.2em;
   border: 1px solid #444;
   background: #222;
   color: white;
@@ -103,16 +104,20 @@ button:hover {
 
 /* Medium screens (Tablets) */
 @media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .calculator {
+    width: 90%;
+  }
+
+  .sidebar {
     width: 90%;
     height: auto;
   }
-  
-  .sidebar {
-    width: 200px;
-    height: auto;
-  }
-  
+
   .row {
     flex-wrap: wrap;
   }
@@ -134,21 +139,21 @@ button:hover {
 
   .calculator {
     width: 100%;
-    height: auto;
   }
 
   .display {
-    font-size: 1.5em;
-    padding: 20px;
+    font-size: 1.2em;
+    padding: 15px;
   }
 
   .row {
     gap: 5px;
+    flex-wrap: wrap;
   }
 
   button {
     padding: 12px;
-    font-size: 0.9em;
+    font-size: 1em;
     flex: 1 1 22%; /* Ensures buttons scale properly */
   }
 }
