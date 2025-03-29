@@ -1,0 +1,171 @@
+/* General Layout */
+.app-container {
+  display: flex; /* Arrange sidebar and calculator side-by-side */
+  min-height: 100vh; /* Ensure full height */
+  align-items: center;
+  justify-content: center;
+  background: #121212; /* Dark background */
+  flex-wrap: wrap; /* Allow stacking on smaller screens */
+  padding: 20px;
+}
+
+/* Sidebar (History Section) */
+.sidebar {
+  width: 250px; /* Adjust width as needed */
+  height: 525px;
+  background: #1b1b1b;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+  overflow-y: auto;
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
+  margin-right: 20px; /* Space between sidebar and calculator */
+}
+
+.sidebar h2 {
+  color: #d4af37;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #2e2e2e;
+  color: #d4af37;
+  font-size: 1em;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+/* Calculator Styling */
+.calculator {
+  width: 858px;
+  height: 480px;
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #2e2e2e, #1b1b1b);
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
+  padding: 20px;
+}
+
+/* Display Section */
+.display {
+  padding: 30px;
+  text-align: right;
+  font-size: 1em;
+  border-bottom: 3px solid #d4af37;
+  background-color: #3e3e3e;
+  color: #d4af37;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  flex: 1;
+  padding: 20px;
+  font-size: 1em;
+  border: 1px solid #444;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #333;
+  transform: scale(1.08);
+}
+
+.num-button {
+  background: #555;
+}
+
+.op-button {
+  background: #d4af37;
+  color: black;
+}
+
+.func-button {
+  background: #444;
+  color: #d4af37;
+}
+
+.equals-button {
+  background: #ff5733;
+  color: white;
+  font-weight: bold;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Medium screens (Tablets) */
+@media (max-width: 1024px) {
+  .calculator {
+    width: 100%;
+    height: auto;
+  }
+  
+  .sidebar {
+    width: 200px;
+    height: auto;
+  }
+  
+  .row {
+    flex-wrap: wrap; /* Ensure buttons fit properly */
+  }
+}
+
+/* Small screens (Mobile) */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Stack sidebar and calculator */
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .calculator {
+    width: 100%;
+    height: auto;
+  }
+
+  .display {
+    font-size: 1.5em;
+    padding: 20px;
+  }
+
+  button {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+}
