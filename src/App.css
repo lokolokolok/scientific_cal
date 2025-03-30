@@ -139,6 +139,7 @@ button:hover {
 
   .calculator {
     width: 120%;
+    margin-right: 0;
   }
 
   .display {
@@ -146,10 +147,7 @@ button:hover {
     padding: 15px;
   }
 
-  .row {
-    gap: 5px;
-    flex-wrap: wrap;
-  }
+  
 
   button {
     padding: 12px;
