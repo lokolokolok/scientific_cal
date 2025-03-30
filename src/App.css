@@ -1,31 +1,34 @@
-/* GENERAL LAYOUT */
+/* General Layout */
 .app-container {
   display: flex;
-  flex-direction: column; /* Stacks elements on top of each other */
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   background: #121212;
+  flex-wrap: wrap;
   padding: 20px;
+  flex-direction: row; /* Default: Side-by-side on large screens */
 }
 
-/* SIDEBAR */
+/* Sidebar (History Section) */
 .sidebar {
-  width: 100%;
-  max-width: 400px; /* Limits width on large screens */
+  width: 250px;
+  height: 525px;
   background: #1b1b1b;
-  padding: 15px;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
   border: 3px solid #d4af37;
   border-radius: 12px;
   overflow-y: auto;
   box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
-  margin-bottom: 15px; /* Adds spacing for mobile */
+  margin-right: 20px;
 }
 
-/* CALCULATOR */
+/* Calculator Styling */
 .calculator {
-  width: 100%;
-  max-width: 400px; /* Prevents stretching on larger screens */
+  width: 858px;
+  max-width: 100%;
   border: 3px solid #d4af37;
   border-radius: 12px;
   overflow: hidden;
@@ -33,54 +36,47 @@
   color: white;
   font-family: 'Courier New', Courier, monospace;
   box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
-  padding: 15px;
+  padding: 20px;
 }
 
-/* DISPLAY */
+/* Display Section */
 .display {
-  width: 100%;
-  padding: 15px;
+  padding: 20px;
   text-align: right;
-  font-size: 1.8em;
-  border-bottom: 3px solid #d4af37;
+  font-size: 2em;
+  
   background-color: #3e3e3e;
   color: #d4af37;
   font-weight: bold;
-  margin-bottom: 10px;
-  overflow-x: auto;
+  margin-bottom: 15px;
+ 
 }
 
-/* BUTTON CONTAINER */
 .buttons {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
 }
 
-.row {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 5px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* BUTTONS */
 button {
-  flex: 1 1 22%; /* Ensures buttons scale properly */
-  min-width: 60px;
-  padding: 15px;
-  font-size: 1.4em;
-  border: 1px solid #444;
-  background: #222;
+  background-color: #333;
   color: white;
+  border: none;
+  padding: 20px;
+  font-size: 1.2em;
+ 
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
-  text-align: center;
+  transition: background-color 0.3s;
+  border: 1px solid #444;
 }
+button {
+  color: white;
+
+ }
 
 button:hover {
   background: #333;
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .num-button {
@@ -103,44 +99,73 @@ button:hover {
   font-weight: bold;
 }
 
-/* 📱 MOBILE FIXES */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 90%;
+/* RESPONSIVE DESIGN */
+
+/* Medium screens (Tablets) */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   .calculator {
     width: 90%;
   }
 
-  .display {
-    font-size: 1.5em;
-    padding: 10px;
+  .sidebar {
+    width: 90%;
+    height: auto;
+    
   }
 
   .row {
-    gap: 3px;
-  }
-
-  button {
-    flex: 1 1 24%; /* Ensures 4 buttons per row */
-    min-width: 50px;
-    padding: 12px;
-    font-size: 1.2em;
+    flex-wrap: wrap;
   }
 }
 
-/* 📱 Extra Small Screens */
-@media (max-width: 480px) {
+/* Small screens (Mobile) */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .calculator {
+    width: 100%;
+  }
+
   .display {
-    font-size: 1.3em;
-    padding: 8px;
+    font-size: 1.2em;
+    padding: 15px;
+  }
+
+  .row {
+    gap: 5px;
+    flex-wrap: wrap;
   }
 
   button {
-    flex: 1 1 23%;
-    min-width: 45px;
+    padding: 12px;
     font-size: 1em;
-    padding: 10px;
+    flex: 1 1 22%; /* Ensures buttons scale properly */
   }
+}.expression {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ddd;
+  text-align: right;
+}
+
+.result {
+  font-size: 2.5rem;
+  color: #00ff99; /* Bright green for better visibility */
+  font-weight: bold;
+  text-align: right;
 }
