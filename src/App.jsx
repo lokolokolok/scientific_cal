@@ -8,7 +8,6 @@ const Calculator = () => {
     const [lastAnswer, setLastAnswer] = useState('0'); 
     const [angleMode, setAngleMode] = useState('Rad'); // Default to radians
 
-
     const handleButtonClick = (value) => {
         if (value === '=') {
             try {
@@ -159,13 +158,22 @@ const Calculator = () => {
                            <button className="func-button" onClick={() => handleScientificOperation('Deg')}>Deg</button>
                             <button className="func-button" onClick={() => handleScientificOperation('EXP')}>EXP</button>
                             <button className="func-button" onClick={() => handleScientificOperation('tan')}>tan</button>
-                           
-                         
+
                             <button className="func-button" onClick={() => handleScientificOperation('cos')}>cos</button>
                             <button className="func-button" onClick={() => handleScientificOperation('log')}>log</button>
                             <button className="func-button" onClick={() => handleScientificOperation('sin')}>sin</button>
+                            <button className="func-button" onClick={() => handleScientificOperation('x^y')}>xʸ</button>
+                            <button className="func-button" onClick={() => handleScientificOperation('e')}>e</button>
+                            <button className="func-button" onClick={() => handleScientificOperation('x!')}>x!</button>
+                            <button className="func-button" onClick={() => handleScientificOperation('√')}>√</button>                     
                             <button className="func-button" onClick={() => handleScientificOperation('ln')}>ln</button>  
-
+                            <button className="func-button" onClick={() => handleScientificOperation('Inv')}>Inv</button>
+                            <button className="func-button" onClick={() => handleButtonClick('(')}>(</button>
+                            <button className="func-button" onClick={() => handleButtonClick(')')}>)</button>
+                            <button className="func-button" onClick={() => handleScientificOperation('π')}>π</button>
+                            </div>
+                            <br />
+                    <div className="buttons">
                             <button className="func-button" onClick={() => handleScientificOperation('%')}>%</button>
                             
                             <button className="func-button" onClick={() => handleButtonClick('AC')}>AC</button>
@@ -175,38 +183,22 @@ const Calculator = () => {
                             <button className="num-button" onClick={() => handleButtonClick('8')}>8</button>
                             <button className="num-button" onClick={() => handleButtonClick('9')}>9</button>
                             <button className="op-button" onClick={() => handleButtonClick('*')}>×</button>
-                       
 
-                       
-                           
-                        
                             <button className="num-button" onClick={() => handleButtonClick('4')}>4</button>
                             <button className="num-button" onClick={() => handleButtonClick('5')}>5</button>
                             <button className="num-button" onClick={() => handleButtonClick('6')}>6</button>
                             <button className="op-button" onClick={() => handleButtonClick('-')}>-</button>
-                      
 
-                          
                             <button className="num-button" onClick={() => handleButtonClick('1')}>1</button>
                             <button className="num-button" onClick={() => handleButtonClick('2')}>2</button>
                             <button className="num-button" onClick={() => handleButtonClick('3')}>3</button>
                             <button className="op-button" onClick={() => handleButtonClick('+')}>+</button>
                             <button className="func-button" onClick={() => handleButtonClick('Ans')}>Ans</button>
                             <button className="num-button" onClick={() => handleButtonClick('0')}>0</button>
-                           
-                            
+     
                             <button className="num-button" onClick={() => handleButtonClick('.')}>.</button>
                             <button className="equals-button" onClick={() => handleButtonClick('=')}>=</button>
-                            <button className="func-button" onClick={() => handleScientificOperation('Inv')}>Inv</button>
-                            <button className="func-button" onClick={() => handleButtonClick('(')}>(</button>
-                            <button className="func-button" onClick={() => handleButtonClick(')')}>)</button>
-                            <button className="func-button" onClick={() => handleScientificOperation('π')}>π</button>
-                            <button className="func-button" onClick={() => handleScientificOperation('x^y')}>xʸ</button>
-                            <button className="func-button" onClick={() => handleScientificOperation('e')}>e</button>
-                            <button className="func-button" onClick={() => handleScientificOperation('x!')}>x!</button>
-                            <button className="func-button" onClick={() => handleScientificOperation('√')}>√</button>
-                        
-                    </div>
+                                 </div>
                 </div>
             </div>
         </div>
