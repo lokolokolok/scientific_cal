@@ -131,15 +131,15 @@ button:hover {
   }
 
   .sidebar {
-    width: 120%;
+    width: 100%;
     height: auto;
     margin-bottom: 20px;
-    margin-right: 0;
+    
   }
 
   .calculator {
-    width: 120%;
-    margin-right: 0;
+    width: 100%;
+    
   }
 
   .display {
