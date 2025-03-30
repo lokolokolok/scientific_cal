@@ -4,7 +4,7 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: #121212;
+  background: #33325a;
   flex-wrap: wrap;
   padding: 20px;
   flex-direction: row; /* Default: Side-by-side on large screens */
@@ -131,7 +131,7 @@ button:hover {
   }
 
   .sidebar {
-    width: 100%;
+    width: 120%;
     height: auto;
     margin-bottom: 20px;
     margin-right: 0;
