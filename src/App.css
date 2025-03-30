@@ -1,33 +1,31 @@
-/* General Layout */
+/* GENERAL LAYOUT */
 .app-container {
   display: flex;
-  min-height: 100vh;
+  flex-direction: column; /* Stacks elements on top of each other */
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   background: #121212;
-  flex-wrap: wrap;
   padding: 20px;
-  flex-direction: row; /* Default: Side-by-side on large screens */
 }
 
-/* Sidebar (History Section) */
+/* SIDEBAR */
 .sidebar {
-  width: 250px;
-  height: 525px;
+  width: 100%;
+  max-width: 400px; /* Limits width on large screens */
   background: #1b1b1b;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 15px;
   border: 3px solid #d4af37;
   border-radius: 12px;
   overflow-y: auto;
   box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
-  margin-right: 20px;
+  margin-bottom: 15px; /* Adds spacing for mobile */
 }
 
-/* Calculator Styling */
+/* CALCULATOR */
 .calculator {
-  width: 858px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 400px; /* Prevents stretching on larger screens */
   border: 3px solid #d4af37;
   border-radius: 12px;
   overflow: hidden;
@@ -35,23 +33,24 @@
   color: white;
   font-family: 'Courier New', Courier, monospace;
   box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
-  padding: 20px;
+  padding: 15px;
 }
 
-/* Display Section */
+/* DISPLAY */
 .display {
-  padding: 20px;
+  width: 100%;
+  padding: 15px;
   text-align: right;
-  font-size: 1.5em;
+  font-size: 1.8em;
   border-bottom: 3px solid #d4af37;
   background-color: #3e3e3e;
   color: #d4af37;
   font-weight: bold;
-  margin-bottom: 15px;
-  width: 100%;
+  margin-bottom: 10px;
+  overflow-x: auto;
 }
 
-/* Buttons */
+/* BUTTON CONTAINER */
 .buttons {
   display: flex;
   flex-direction: column;
@@ -59,25 +58,29 @@
 
 .row {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 5px;
+  margin-bottom: 5px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
+/* BUTTONS */
 button {
-  flex: 1;
-  padding: 20px;
-  font-size: 1.2em;
+  flex: 1 1 22%; /* Ensures buttons scale properly */
+  min-width: 60px;
+  padding: 15px;
+  font-size: 1.4em;
   border: 1px solid #444;
   background: #222;
   color: white;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease;
+  text-align: center;
 }
 
 button:hover {
   background: #333;
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .num-button {
@@ -100,60 +103,44 @@ button:hover {
   font-weight: bold;
 }
 
-/* RESPONSIVE DESIGN */
-
-/* Medium screens (Tablets) */
-@media (max-width: 1024px) {
-  .app-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .calculator {
-    width: 90%;
-  }
-
-  .sidebar {
-    width: 90%;
-    height: auto;
-  }
-
-  .row {
-    flex-wrap: wrap;
-  }
-}
-
-/* Small screens (Mobile) */
+/* 📱 MOBILE FIXES */
 @media (max-width: 768px) {
-  .app-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .sidebar {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    margin-right: 0;
+    width: 90%;
   }
 
   .calculator {
-    width: 100%;
+    width: 90%;
   }
 
   .display {
-    font-size: 1.2em;
-    padding: 15px;
+    font-size: 1.5em;
+    padding: 10px;
   }
 
   .row {
-    gap: 5px;
-    flex-wrap: wrap;
+    gap: 3px;
   }
 
   button {
+    flex: 1 1 24%; /* Ensures 4 buttons per row */
+    min-width: 50px;
     padding: 12px;
+    font-size: 1.2em;
+  }
+}
+
+/* 📱 Extra Small Screens */
+@media (max-width: 480px) {
+  .display {
+    font-size: 1.3em;
+    padding: 8px;
+  }
+
+  button {
+    flex: 1 1 23%;
+    min-width: 45px;
     font-size: 1em;
-    flex: 1 1 22%; /* Ensures buttons scale properly */
+    padding: 10px;
   }
 }
