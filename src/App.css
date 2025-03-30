@@ -15,6 +15,7 @@
   width: 250px;
   height: 525px;
   background: #1b1b1b;
+  color: white;
   padding: 20px;
   box-sizing: border-box;
   border: 3px solid #d4af37;
@@ -42,38 +43,36 @@
 .display {
   padding: 20px;
   text-align: right;
-  font-size: 1.5em;
-  border-bottom: 3px solid #d4af37;
+  font-size: 2em;
+  
   background-color: #3e3e3e;
   color: #d4af37;
   font-weight: bold;
   margin-bottom: 15px;
-  width: 100%;
+ 
 }
 
-/* Buttons */
 .buttons {
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
 }
 
 button {
-  flex: 1;
+  background-color: #333;
+  color: white;
+  border: none;
   padding: 20px;
   font-size: 1.2em;
-  border: 1px solid #444;
-  background: #222;
-  color: white;
+ 
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.3s;
+  border: 1px solid #444;
 }
+button {
+  color: white;
+
+ }
 
 button:hover {
   background: #333;
@@ -116,6 +115,7 @@ button:hover {
   .sidebar {
     width: 90%;
     height: auto;
+    
   }
 
   .row {
@@ -156,4 +156,16 @@ button:hover {
     font-size: 1em;
     flex: 1 1 22%; /* Ensures buttons scale properly */
   }
+}.expression {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ddd;
+  text-align: right;
+}
+
+.result {
+  font-size: 2.5rem;
+  color: #00ff99; /* Bright green for better visibility */
+  font-weight: bold;
+  text-align: right;
 }
