@@ -14,16 +14,14 @@ const Calculator = () => {
                 // Evaluate the expression safely using Function instead of eval()
                 const result = Function(`'use strict'; return (${expression})`)();
                 setDisplay(result.toString());
-                setExpression(result.toString());
+                setExpression(expression.toString());
                 setHistory([...history, `${expression} = ${result}`]);
                 setLastAnswer(result.toString()); // Store the last answer
             } catch (error) {
                 setDisplay('Error');
                 setExpression('');
             }
-        } else if (value === '^') {
-            setExpression(expression + '^'); // Show `^` on display
-            setDisplay(display + '^');
+        
         } else if (value === 'Ans') {
             setExpression(expression + lastAnswer); // Insert last answer
             setDisplay(display === '0' ? lastAnswer : display + lastAnswer);    
